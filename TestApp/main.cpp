@@ -15,15 +15,6 @@ int main(int argc, char *argv[])
     // testWindow->setParent((&w));
     DigitalClock clock(&win);
     // clock.show();
-    //w.setCentralWidget(&clock);
-    //clock.setParent(&Time);
-    //QGroupBox *gridGroupBox;
-    //gridGroupBox = new QGroupBox(tr("Grid layout"));
-
-//    QGridLayout *gridLayout;
-//    gridLayout->addWidget(&clock,0,0,1,1);
-
-//    w.setLayout(gridLayout);
 
     // Grid layout with 3 buttons
     QGridLayout *gridLayout = new QGridLayout;
