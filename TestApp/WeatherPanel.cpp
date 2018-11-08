@@ -23,7 +23,7 @@ void WeatherPanel::getWeather(){
 	outputToLabel=weatherToToDisplay(weather);	
 	setText(outputToLabel);
 }
-QString WeatherPanel::weatherToToDisplay(string weather[]){
+QString WeatherPanel::weatherToToDisplay(string weatherArray[]){
 	/* converts weather array into a Qstring of the format
 	Weather:
 	[weather type]
@@ -32,7 +32,7 @@ QString WeatherPanel::weatherToToDisplay(string weather[]){
 	Humidity:
 	[humidity] percent
 	*/
-	QString toReturn=("City:\n%s\nWeather:\n%s\nTemperature:\n%s Celcius\nHumidity:\n%s percent",weather[0],weather[2],weather[3],weather[4]);
+	QString toReturn=("City:\n%s\nWeather:\n%s\nTemperature:\n%s Celcius\nHumidity:\n%s percent",weatherArray[0],weatherArray[2],weatherArray[3],weatherArray[4]);
 	return toReturn;
 }
 /*
