@@ -8,7 +8,7 @@
 #include <curl/curl.h>
 #include <curl/types.h>
 #include <curl/easy.h>
-#include "rapidjson"
+#include <rapidjson>
 #include <string>
 #include <fstream>
 
@@ -22,13 +22,13 @@ class WeatherPanel: public QLabel
 		*weather[4] holds the humidity
 		*/
 		string weather[5];
-		QString weatherToToDisplay();
+		QString weatherToToDisplay(weatherArray[4]);
 		QString outputToLabel;
 		void pullData();
 	public:
 		WeatherPanel(QWidget *parent = 0);
 		string[] update();
-		QLabel getWeather();
+		void getWeather();
 };
 
 #endif
