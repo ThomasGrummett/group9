@@ -1,63 +1,45 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include <QLabel>
 #include "digitalclock.h"
 #include <QGridLayout>
-#include <QGroupBox>
-#include <QPushButton>
+
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow win;
 
-    //QWidget *testWindow = new QWidget;
-    // testWindow->setParent((&w));
     DigitalClock clock(&win);
-    // clock.show();
+    clock.show();
 
-    // Grid layout with 3 buttons
+    // Grid layout with 4 widgets for time, weather, news and social
     QGridLayout *gridLayout = new QGridLayout;
-    QPushButton *b1 = new QPushButton("A");
-    QPushButton *b2 = new QPushButton("B");
-    QPushButton *b3 = new QPushButton("C");
-    QPushButton *b4 = new QPushButton("D");
-    QPushButton *b5 = new QPushButton("E");
-    QPushButton *b6 = new QPushButton("F");
+    QQuickWidget *qw2 = new QQuickWidget();
+    QQuickWidget *qw3 = new QQuickWidget();
+    QQuickWidget *qw4 = new QQuickWidget();
 
-    // addWidget(*Widget, row, column, rowspan, colspan)
-    // 0th row
     gridLayout->addWidget(&clock,0,0,1,1);
-    gridLayout->addWidget(b2,0,1,1,1);
-    gridLayout->addWidget(b3,0,2,1,1);
+    gridLayout->addWidget(qw2,0,1,1,2);
+    gridLayout->addWidget(qw3,1,0,2,3);
+    gridLayout->addWidget(qw4,0,3,3,2);
 
-    // 1st row
-    gridLayout->addWidget(b4,1,0,1,1);
+    // adjust styling
+    gridLayout->setColumnMinimumWidth(0, (win.width()/4));
+    gridLayout->setRowMinimumHeight(1, ((win.height()/2)));
 
-    // 2nd row with 2-column span
-    gridLayout->addWidget(b5,2,0,1,2);
-
-    // 3rd row with 3-column span
-    gridLayout->addWidget(b6,3,0,1,3);
-
-    // Create a widget
+    // Create a widget to contain everything
     QWidget *w = new QWidget();
 
     // Set the grid layout as a main layout
     w->setLayout(gridLayout);
-
-    // Window title
-    w->setWindowTitle("Grid Layouts (3x4)");
-
 
     // set parent
     w->setParent(&win);
     // Display
     w->show();
     win.setCentralWidget(w);
+    win.setWindowTitle("PiDash");
     win.show();
-
-
 
 
     return a.exec();
