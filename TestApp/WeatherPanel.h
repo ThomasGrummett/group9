@@ -1,4 +1,4 @@
-#ifndef
+#ifndef WEATHERPANEL_H
 #define WEATHERPANEL_H
 
 #include <QLabel>
