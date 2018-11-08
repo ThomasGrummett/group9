@@ -2,6 +2,7 @@
 #include <QApplication>
 #include "digitalclock.h"
 #include <QGridLayout>
+#include "WeatherPanel.h"
 
 
 int main(int argc, char *argv[])
