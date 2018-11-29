@@ -7,6 +7,7 @@
 #include "social.h"
 #include "image.h"
 #include "weatherpanel.h"
+#include "news.h"
 
 int main(int argc, char *argv[])
 {
@@ -31,6 +32,7 @@ int main(int argc, char *argv[])
     //TODO: Add image widget to gridlayout without breaking pre-existing grid?
     //gridLayout->addWidget(imgWidget,?,?,?,?);
 
+    news *newspanel = new news(qw4);
     image *img = new image(imgWidget);
     social *soc = new social(socialWidget);
  	weatherpanel *weather = new weatherpanel(imgWidget);

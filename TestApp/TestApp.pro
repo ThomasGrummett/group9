@@ -35,7 +35,8 @@ SOURCES += \
     social.cpp \
     image.cpp \
     picturename.cpp \
-    news.cpp
+    news.cpp \
+    weatherpanel.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,7 +44,8 @@ HEADERS += \
     social.h \
     image.h \
     picturename.h \
-    news.h
+    news.h \
+    weatherpanel.h
 
 FORMS += \
         mainwindow.ui
