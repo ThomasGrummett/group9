@@ -21,13 +21,19 @@
 #include <QLoggingCategory>
 #include <QApplication>
 #include <QtWidgets>
-
+/**
+ *@brief Takes a qquickwidget and displays the weather in it
+ * @author Thomas Grummett
+ */
 class QQuickWidget;
 class weatherpanel: public QLabel
 {
 public:
-
-       weatherpanel(QWidget *parent=0);
+       int getWeatherID();
+       void setWeatherID(int toSet);
+       QString wToImage;
+       int weatherID;
+       weatherpanel(QQuickWidget *parent=0);
        QString getID();
        void setWeather(QString weatherIn);
        void setTemp(QString tempIn);
@@ -41,6 +47,7 @@ public:
 private slots:
        void pullWeather();
 private:
+       void updateImage();
        QString weather;
        QString temperature;
        void dataToVars(QNetworkReply *netreply);
