@@ -38,7 +38,7 @@ social::social(QQuickWidget *parent)
 
     //Creates a QPushButton to handle click inputs for when to refresh the page
     reloadbutton = new QPushButton(parent);
-    reloadbutton->setStyleSheet(style); //Sets stylesheet to avoid white text on white background for some OS
+    reloadbutton->setStyleSheet(stylebutton); //Sets stylesheet to avoid white text on white background for some OS
     reloadbutton->setText("Load blog");
     reloadbutton->setGeometry(494,-1,165,32); //Positions the overlay to the right to block less text
     QObject::connect(reloadbutton, SIGNAL(clicked()), this, SLOT(on_reload()));

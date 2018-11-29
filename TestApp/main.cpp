@@ -9,6 +9,11 @@
 #include "weatherpanel.h"
 #include "news.h"
 
+/**
+   @brief the main class that incorporates and displays all components of the PiDash
+   @author Meghan Hannon
+   @return Qt application exec()
+*/
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

@@ -1,0 +1,184 @@
+\hypertarget{classpicturename}{}\section{picturename Class Reference}
+\label{classpicturename}\index{picturename@{picturename}}
+
+
+A singleton design that holds a single given Q\+String object for a picture name.  
+
+
+
+
+{\ttfamily \#include $<$picturename.\+h$>$}
+
+Inheritance diagram for picturename\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpicturename}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpicturename_a82cfb404225352e4148ebb462ad74762}\label{classpicturename_a82cfb404225352e4148ebb462ad74762}} 
+void {\bfseries notify} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \mbox{\hyperlink{classpicturename_a6b2c3caa683878aa5f95b9276502a8ae}{get\+\_\+picture}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Q\+String with the name of the picture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpicturename_a4b95f1c195e8ef08203f3e3204db5bfe}{add\+\_\+observer}} (\mbox{\hyperlink{classimage}{image}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Adds an observer to the list, and creates a signal connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpicturename_ae4b0e336db224b42756d00dc2c8d67ba}{remove\+\_\+observer}} (\mbox{\hyperlink{classimage}{image}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Removes an observer from the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpicturename_ab96020b531c8e2c852ea4bc17969e36c}{set\+\_\+picture}} (Q\+String)
+\begin{DoxyCompactList}\small\item\em Sets the Q\+String for the picture name to the given Q\+String and notifies observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classpicturename}{picturename}} \& \mbox{\hyperlink{classpicturename_a2447735d7a01afd95bceadcd5cfc28f2}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a singleton instance of picturename, creates one if it does not exist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpicturename_a446962c869c6f39fd01688d94f9cde1b}{picturename}} ()
+\begin{DoxyCompactList}\small\item\em Creates an instance of picturename, set aurora as default image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpicturename_af440f412d5850406ca92eac1ca7f827d}\label{classpicturename_af440f412d5850406ca92eac1ca7f827d}} 
+{\bfseries picturename} (\mbox{\hyperlink{classpicturename}{picturename}} \&other)
+\item 
+\mbox{\Hypertarget{classpicturename_ab392e401bcbfd809e1fe221105e92b13}\label{classpicturename_ab392e401bcbfd809e1fe221105e92b13}} 
+\mbox{\hyperlink{classpicturename}{picturename}} \& {\bfseries operator=} (\mbox{\hyperlink{classpicturename}{picturename}} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpicturename_af389638c5b4dbf88569aeb5f2e173ffd}\label{classpicturename_af389638c5b4dbf88569aeb5f2e173ffd}} 
+Q\+String {\bfseries picturelink}
+\item 
+\mbox{\Hypertarget{classpicturename_a6fe14cb9fa6bde776f9ddf0f1904fbb3}\label{classpicturename_a6fe14cb9fa6bde776f9ddf0f1904fbb3}} 
+Q\+List$<$ \mbox{\hyperlink{classimage}{image}} $\ast$ $>$ {\bfseries observers}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classpicturename}{picturename}} $\ast$ \mbox{\hyperlink{classpicturename_ab2f5e20595601416bf9f3e1b65a547d4}{\+\_\+instance}} = N\+U\+LL
+\begin{DoxyCompactList}\small\item\em A singleton design that holds a single given Q\+String object for a picture name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A singleton design that holds a single given Q\+String object for a picture name. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpicturename_a446962c869c6f39fd01688d94f9cde1b}\label{classpicturename_a446962c869c6f39fd01688d94f9cde1b}} 
+\index{picturename@{picturename}!picturename@{picturename}}
+\index{picturename@{picturename}!picturename@{picturename}}
+\subsubsection{\texorpdfstring{picturename()}{picturename()}}
+{\footnotesize\ttfamily picturename\+::picturename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Creates an instance of picturename, set aurora as default image. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpicturename_a4b95f1c195e8ef08203f3e3204db5bfe}\label{classpicturename_a4b95f1c195e8ef08203f3e3204db5bfe}} 
+\index{picturename@{picturename}!add\+\_\+observer@{add\+\_\+observer}}
+\index{add\+\_\+observer@{add\+\_\+observer}!picturename@{picturename}}
+\subsubsection{\texorpdfstring{add\+\_\+observer()}{add\_observer()}}
+{\footnotesize\ttfamily void picturename\+::add\+\_\+observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classimage}{image}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Adds an observer to the list, and creates a signal connection. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classpicturename_a6b2c3caa683878aa5f95b9276502a8ae}\label{classpicturename_a6b2c3caa683878aa5f95b9276502a8ae}} 
+\index{picturename@{picturename}!get\+\_\+picture@{get\+\_\+picture}}
+\index{get\+\_\+picture@{get\+\_\+picture}!picturename@{picturename}}
+\subsubsection{\texorpdfstring{get\+\_\+picture()}{get\_picture()}}
+{\footnotesize\ttfamily Q\+String picturename\+::get\+\_\+picture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the Q\+String with the name of the picture. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classpicturename_a2447735d7a01afd95bceadcd5cfc28f2}\label{classpicturename_a2447735d7a01afd95bceadcd5cfc28f2}} 
+\index{picturename@{picturename}!instance@{instance}}
+\index{instance@{instance}!picturename@{picturename}}
+\subsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpicturename}{picturename}} \& picturename\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns a pointer to a singleton instance of picturename, creates one if it does not exist. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+the pointer to the instance of picturename 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpicturename_ae4b0e336db224b42756d00dc2c8d67ba}\label{classpicturename_ae4b0e336db224b42756d00dc2c8d67ba}} 
+\index{picturename@{picturename}!remove\+\_\+observer@{remove\+\_\+observer}}
+\index{remove\+\_\+observer@{remove\+\_\+observer}!picturename@{picturename}}
+\subsubsection{\texorpdfstring{remove\+\_\+observer()}{remove\_observer()}}
+{\footnotesize\ttfamily void picturename\+::remove\+\_\+observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classimage}{image}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Removes an observer from the list. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classpicturename_ab96020b531c8e2c852ea4bc17969e36c}\label{classpicturename_ab96020b531c8e2c852ea4bc17969e36c}} 
+\index{picturename@{picturename}!set\+\_\+picture@{set\+\_\+picture}}
+\index{set\+\_\+picture@{set\+\_\+picture}!picturename@{picturename}}
+\subsubsection{\texorpdfstring{set\+\_\+picture()}{set\_picture()}}
+{\footnotesize\ttfamily void picturename\+::set\+\_\+picture (\begin{DoxyParamCaption}\item[{Q\+String}]{link }\end{DoxyParamCaption})}
+
+
+
+Sets the Q\+String for the picture name to the given Q\+String and notifies observers. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpicturename_ab2f5e20595601416bf9f3e1b65a547d4}\label{classpicturename_ab2f5e20595601416bf9f3e1b65a547d4}} 
+\index{picturename@{picturename}!\+\_\+instance@{\+\_\+instance}}
+\index{\+\_\+instance@{\+\_\+instance}!picturename@{picturename}}
+\subsubsection{\texorpdfstring{\+\_\+instance}{\_instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpicturename}{picturename}} $\ast$ picturename\+::\+\_\+instance = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+A singleton design that holds a single given Q\+String object for a picture name. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+picturename.\+h\item 
+picturename.\+cpp\end{DoxyCompactItemize}

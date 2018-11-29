@@ -1,0 +1,109 @@
+\hypertarget{classnews}{}\section{news Class Reference}
+\label{classnews}\index{news@{news}}
+
+
+This class takes a given parent Q\+Quick\+Widget and displays a news media blog in it.  
+
+
+
+
+{\ttfamily \#include $<$news.\+h$>$}
+
+Inheritance diagram for news\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classnews}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classnews_a048f06e78e76602e4a8d2eb560bf9a23}{on\+\_\+reload}} ()
+\begin{DoxyCompactList}\small\item\em This class takes a given parent Q\+Quick\+Widget and displays a news feed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnews_a81a386e5beb8547d605d862a25623310}\label{classnews_a81a386e5beb8547d605d862a25623310}} 
+void {\bfseries reload} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnews_ac5f561e7fd8a2773200bf2925208a732}{news}} (Q\+Quick\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor that takes the given parent widget and displays a news media blog inside it, can be updated on button click. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnews_abbbded8e86c013dd7a92b810e7aea641}\label{classnews_abbbded8e86c013dd7a92b810e7aea641}} 
+Q\+Web\+Engine\+View $\ast$ {\bfseries wv}
+\item 
+\mbox{\Hypertarget{classnews_acd7048edc8e822e30c3308f7448be600}\label{classnews_acd7048edc8e822e30c3308f7448be600}} 
+Q\+Push\+Button $\ast$ {\bfseries reloadbutton}
+\item 
+\mbox{\Hypertarget{classnews_ab6b05e5dc5be51eccdda395f5a575a03}\label{classnews_ab6b05e5dc5be51eccdda395f5a575a03}} 
+Q\+String {\bfseries stylebutton} = \char`\"{}background-\/color\+: white; color\+: black\char`\"{}
+\item 
+\mbox{\Hypertarget{classnews_a56769d905947c4a800d2a8a67ed9c97e}\label{classnews_a56769d905947c4a800d2a8a67ed9c97e}} 
+Q\+String {\bfseries url}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class takes a given parent Q\+Quick\+Widget and displays a news media blog in it. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee ~\newline
+The news class inherits from Q\+Object to get access to signals and slots for updating 
+
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnews_ac5f561e7fd8a2773200bf2925208a732}\label{classnews_ac5f561e7fd8a2773200bf2925208a732}} 
+\index{news@{news}!news@{news}}
+\index{news@{news}!news@{news}}
+\subsubsection{\texorpdfstring{news()}{news()}}
+{\footnotesize\ttfamily news\+::news (\begin{DoxyParamCaption}\item[{Q\+Quick\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructor that takes the given parent widget and displays a news media blog inside it, can be updated on button click. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Quick\+Widget} & parent widget to display the news media blog in \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnews_a048f06e78e76602e4a8d2eb560bf9a23}\label{classnews_a048f06e78e76602e4a8d2eb560bf9a23}} 
+\index{news@{news}!on\+\_\+reload@{on\+\_\+reload}}
+\index{on\+\_\+reload@{on\+\_\+reload}!news@{news}}
+\subsubsection{\texorpdfstring{on\+\_\+reload}{on\_reload}}
+{\footnotesize\ttfamily void news\+::on\+\_\+reload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+This class takes a given parent Q\+Quick\+Widget and displays a news feed. 
+
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]May throw warnings and errors to console about missing sync tokens, will not crash Everything works nicely on the front end \end{DoxyRefDesc}
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee Upon button click signal, reloads the url to refresh what is on the page 
+
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+news.\+h\item 
+news.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,115 @@
+\hypertarget{classsocial}{}\section{social Class Reference}
+\label{classsocial}\index{social@{social}}
+
+
+This class takes a given parent Q\+Quick\+Widget and displays a social media blog in it.  
+
+
+
+
+{\ttfamily \#include $<$social.\+h$>$}
+
+Inheritance diagram for social\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsocial}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsocial_aed7a46c6bae233cd68a61aefc8ba3915}{on\+\_\+reload}} ()
+\begin{DoxyCompactList}\small\item\em This class takes a given parent Q\+Quick\+Widget and displays a social media blog in it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsocial_a000ed24b8b1e7abfc04dce3b76139fcd}\label{classsocial_a000ed24b8b1e7abfc04dce3b76139fcd}} 
+void {\bfseries reload} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsocial_ae8c36ee55976d5b9fb5f7738be4ed2c1}{social}} (Q\+Quick\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor that takes the given parent widget and displays a social media blog inside it, can be updated on button click. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsocial_af3bc85613901d458ce579967d5f1fb38}\label{classsocial_af3bc85613901d458ce579967d5f1fb38}} 
+Q\+Web\+Engine\+View $\ast$ {\bfseries wv}
+\item 
+\mbox{\Hypertarget{classsocial_ad4e1926a47c20d06b0ee910ab298d9a9}\label{classsocial_ad4e1926a47c20d06b0ee910ab298d9a9}} 
+Q\+Push\+Button $\ast$ {\bfseries reloadbutton}
+\item 
+\mbox{\Hypertarget{classsocial_a16d2a524d4366696b9cff6d04426aa63}\label{classsocial_a16d2a524d4366696b9cff6d04426aa63}} 
+const Q\+String {\bfseries style} = \char`\"{}background-\/color\+: \#A3\+C1\+DA; color\+: white;\char`\"{}
+\item 
+\mbox{\Hypertarget{classsocial_ae4ed1fe9e3a3dbd9492ad2689509228e}\label{classsocial_ae4ed1fe9e3a3dbd9492ad2689509228e}} 
+Q\+String {\bfseries stylebutton} = \char`\"{}background-\/color\+: white; color\+: black\char`\"{}
+\item 
+\mbox{\Hypertarget{classsocial_abaae965357c4daea14964c1c5237a9d4}\label{classsocial_abaae965357c4daea14964c1c5237a9d4}} 
+Q\+Line\+Edit $\ast$ {\bfseries urlbox}
+\item 
+\mbox{\Hypertarget{classsocial_abadd3b592cd9a28b0201595f4c448ffc}\label{classsocial_abadd3b592cd9a28b0201595f4c448ffc}} 
+Q\+String {\bfseries url}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class takes a given parent Q\+Quick\+Widget and displays a social media blog in it. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee ~\newline
+The social class inherits from Q\+Object to get access to signals and slots for updating 
+
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsocial_ae8c36ee55976d5b9fb5f7738be4ed2c1}\label{classsocial_ae8c36ee55976d5b9fb5f7738be4ed2c1}} 
+\index{social@{social}!social@{social}}
+\index{social@{social}!social@{social}}
+\subsubsection{\texorpdfstring{social()}{social()}}
+{\footnotesize\ttfamily social\+::social (\begin{DoxyParamCaption}\item[{Q\+Quick\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructor that takes the given parent widget and displays a social media blog inside it, can be updated on button click. 
+
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Quick\+Widget} & parent widget to display the social media blog in \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsocial_aed7a46c6bae233cd68a61aefc8ba3915}\label{classsocial_aed7a46c6bae233cd68a61aefc8ba3915}} 
+\index{social@{social}!on\+\_\+reload@{on\+\_\+reload}}
+\index{on\+\_\+reload@{on\+\_\+reload}!social@{social}}
+\subsubsection{\texorpdfstring{on\+\_\+reload}{on\_reload}}
+{\footnotesize\ttfamily void social\+::on\+\_\+reload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+This class takes a given parent Q\+Quick\+Widget and displays a social media blog in it. 
+
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000002}{Bug}}]Will throw warnings and errors to console about missing sync tokens?? Everything works nicely on the front end \end{DoxyRefDesc}
+\begin{DoxyAuthor}{Author}
+Stacey Gunderson, Alison Lee Upon button click signal, reloads the url to refresh what is on the page 
+
+Stacey Gunderson, Alison Lee 
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+social.\+h\item 
+social.\+cpp\end{DoxyCompactItemize}

@@ -29,6 +29,7 @@ private:
     QWebEngineView *wv; //The widget to use to display social media
     QPushButton *reloadbutton; //The button that takes refresh clicks
     const QString style = "background-color: #A3C1DA; color: white;";
+    QString stylebutton = "background-color: white; color: black";
     QLineEdit *urlbox;
     QString url;
 

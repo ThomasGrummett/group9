@@ -16,8 +16,8 @@ weatherpanel::weatherpanel(QQuickWidget *parent)
     :QLabel(parent)
 {
     QString style="background-color: #A3C1DA; color: white;";
-   this->setStyleSheet(style);
-    setGeometry(0,170,400,90);
+    this->setStyleSheet(style);
+    setGeometry(0,00,400,110);
     appID="a814b2b3fb9f749e9aa297b1f0300a84";
     /// make sure we have an active network session
     this->nam = new QNetworkAccessManager(this);

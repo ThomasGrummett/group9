@@ -38,9 +38,9 @@ news::news(QQuickWidget *parent)
 
     //Creates a QPushButton to handle click inputs for when to refresh the page
     reloadbutton = new QPushButton(parent);
-    reloadbutton->setStyleSheet(style); //Sets stylesheet to avoid white text on white background for some OS
+    reloadbutton->setStyleSheet(stylebutton); //Sets stylesheet to avoid white text on white background for some OS
     reloadbutton->setText("Refresh news");
-    reloadbutton->setGeometry(220,-1,140,32); //Positions the overlay to the right to block less text
+    reloadbutton->setGeometry(215,-1,140,32); //Positions the overlay to the right to block less text
     QObject::connect(reloadbutton, SIGNAL(clicked()), this, SLOT(on_reload()));
 
     wv->show();

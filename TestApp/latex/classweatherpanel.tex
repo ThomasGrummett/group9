@@ -1,0 +1,332 @@
+\hypertarget{classweatherpanel}{}\section{weatherpanel Class Reference}
+\label{classweatherpanel}\index{weatherpanel@{weatherpanel}}
+Inheritance diagram for weatherpanel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classweatherpanel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classweatherpanel_a45e1d05896ce57be8a2485f7559c4276}{get\+Weather\+ID}} ()
+\begin{DoxyCompactList}\small\item\em returns an integer representing the type of weather \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classweatherpanel_adcfb5683fa421ee6b45b775ca3b6c5ae}{set\+Weather\+ID}} (int to\+Set)
+\begin{DoxyCompactList}\small\item\em sets weather\+ID to an integer representing the type of weather \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classweatherpanel_a4f24bc46cb882bf72f7712a6aca35fbb}{weatherpanel}} (Q\+Quick\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em this class takes a Q\+Quick\+Widget, adds a Q\+Label to it, then displays todays weather within that Q\+Label \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{classweatherpanel_a6f90f234561aa11f374fbd6f89e4c02b}{get\+ID}} ()
+\begin{DoxyCompactList}\small\item\em returns a Q\+String holding the openweathermaps api key \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classweatherpanel_aa289deea2382682a44450048c5d8dafb}{set\+Weather}} (Q\+String weather\+In)
+\begin{DoxyCompactList}\small\item\em sets weather to a Q\+String describing the weather \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classweatherpanel_a3869138bae14bb7223e78541ddb45ae9}{set\+Temp}} (Q\+String temp\+In)
+\begin{DoxyCompactList}\small\item\em sets temperature to a Q\+String describing the temperature \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{classweatherpanel_af8d593a8bc328ea0614f9bfb3ddf4f08}{get\+Weather}} ()
+\begin{DoxyCompactList}\small\item\em returns a Q\+String describing the weather \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{classweatherpanel_a56fe31e2484d3266b9b039eaec58da7d}{get\+Temp}} ()
+\begin{DoxyCompactList}\small\item\em returns a Q\+String describing the temperature \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classweatherpanel_a8c4de1853c738dcf431f33a7a3ac56e4}{update\+Text}} ()
+\begin{DoxyCompactList}\small\item\em converts the data to a string then sets the Q\+Labels text to this string \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classweatherpanel_a8fad815741f5d5047e6d0c337a1016f7}\label{classweatherpanel_a8fad815741f5d5047e6d0c337a1016f7}} 
+Q\+String {\bfseries w\+To\+Image}
+\item 
+\mbox{\Hypertarget{classweatherpanel_a391826b3d7f3df11c41df7c182639084}\label{classweatherpanel_a391826b3d7f3df11c41df7c182639084}} 
+int {\bfseries weather\+ID}
+\item 
+\mbox{\Hypertarget{classweatherpanel_ae3b988537592d93f7b3e188e3ff96ca1}\label{classweatherpanel_ae3b988537592d93f7b3e188e3ff96ca1}} 
+Q\+String {\bfseries city}
+\item 
+\mbox{\Hypertarget{classweatherpanel_ad53cf408c768382d7f6f5471f1f3f6a9}\label{classweatherpanel_ad53cf408c768382d7f6f5471f1f3f6a9}} 
+Q\+Network\+Access\+Manager $\ast$ {\bfseries nam}
+\item 
+\mbox{\Hypertarget{classweatherpanel_aaaa5cb24a09525e123ef0b2f624d2d0f}\label{classweatherpanel_aaaa5cb24a09525e123ef0b2f624d2d0f}} 
+Q\+Network\+Session $\ast$ {\bfseries ns}
+\item 
+\mbox{\Hypertarget{classweatherpanel_a0db73d897f7290fa37f3e3af183a3587}\label{classweatherpanel_a0db73d897f7290fa37f3e3af183a3587}} 
+Q\+String {\bfseries app\+ID}
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classweatherpanel_a212139bb98a83e8c52b30bbe786b8bb1}{pull\+Weather}} ()
+\begin{DoxyCompactList}\small\item\em connects to openweathermaps api and queries for the weather data in J\+S\+ON format, calls data\+To\+Vars to save this info \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classweatherpanel_a56353d725e339accc2952eda96d65907}{update\+Image}} ()
+\begin{DoxyCompactList}\small\item\em Determines a background picture based on weather\+ID, sets the picture to the background. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classweatherpanel_a5a3f8862f3f1ae01783a3e0bc084ba69}{data\+To\+Vars}} (Q\+Network\+Reply $\ast$netreply)
+\begin{DoxyCompactList}\small\item\em converts the raw data to useful variables \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{classweatherpanel_aa060e2d25c499b202688fdb0ed2e51f0}{KtoC}} (double temp)
+\begin{DoxyCompactList}\small\item\em converts kelvin to celcius and then returns as string \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classweatherpanel_a03b9e1f4ca93f6ffb835ed19c3645d91}\label{classweatherpanel_a03b9e1f4ca93f6ffb835ed19c3645d91}} 
+Q\+String {\bfseries weather}
+\item 
+\mbox{\Hypertarget{classweatherpanel_ab2c38c795e09f961485bef0c2f36165c}\label{classweatherpanel_ab2c38c795e09f961485bef0c2f36165c}} 
+Q\+String {\bfseries temperature}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classweatherpanel_a4f24bc46cb882bf72f7712a6aca35fbb}\label{classweatherpanel_a4f24bc46cb882bf72f7712a6aca35fbb}} 
+\index{weatherpanel@{weatherpanel}!weatherpanel@{weatherpanel}}
+\index{weatherpanel@{weatherpanel}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{weatherpanel()}{weatherpanel()}}
+{\footnotesize\ttfamily weatherpanel\+::weatherpanel (\begin{DoxyParamCaption}\item[{Q\+Quick\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+this class takes a Q\+Quick\+Widget, adds a Q\+Label to it, then displays todays weather within that Q\+Label 
+
+\begin{DoxyAuthor}{Author}
+Thomas Grummett powered by Open Weather Maps\+: openweathermaps.\+org Constructor takes a Q\+Quick\+Widget and adds the weather display to it 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Quick\+Widget} & parent to display the weather in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+make sure we have an active network session
+
+set london as default
+
+tell the system we want network
+
+connect timer in order to pull the weather every 5 mins 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classweatherpanel_a5a3f8862f3f1ae01783a3e0bc084ba69}\label{classweatherpanel_a5a3f8862f3f1ae01783a3e0bc084ba69}} 
+\index{weatherpanel@{weatherpanel}!data\+To\+Vars@{data\+To\+Vars}}
+\index{data\+To\+Vars@{data\+To\+Vars}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{data\+To\+Vars()}{dataToVars()}}
+{\footnotesize\ttfamily void weatherpanel\+::data\+To\+Vars (\begin{DoxyParamCaption}\item[{Q\+Network\+Reply $\ast$}]{netreply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+converts the raw data to useful variables 
+
+
+\begin{DoxyParams}{Parameters}
+{\em netreply} & is the reply for a query to openweathermaps api \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+pull weather data
+
+pull temperature
+
+update Q\+Label \mbox{\Hypertarget{classweatherpanel_a6f90f234561aa11f374fbd6f89e4c02b}\label{classweatherpanel_a6f90f234561aa11f374fbd6f89e4c02b}} 
+\index{weatherpanel@{weatherpanel}!get\+ID@{get\+ID}}
+\index{get\+ID@{get\+ID}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{get\+I\+D()}{getID()}}
+{\footnotesize\ttfamily Q\+String weatherpanel\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns a Q\+String holding the openweathermaps api key 
+
+\begin{DoxyReturn}{Returns}
+Q\+String app\+ID that holds the api key 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classweatherpanel_a56fe31e2484d3266b9b039eaec58da7d}\label{classweatherpanel_a56fe31e2484d3266b9b039eaec58da7d}} 
+\index{weatherpanel@{weatherpanel}!get\+Temp@{get\+Temp}}
+\index{get\+Temp@{get\+Temp}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{get\+Temp()}{getTemp()}}
+{\footnotesize\ttfamily Q\+String weatherpanel\+::get\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns a Q\+String describing the temperature 
+
+\begin{DoxyReturn}{Returns}
+Q\+String temperature that describes the temperature 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classweatherpanel_af8d593a8bc328ea0614f9bfb3ddf4f08}\label{classweatherpanel_af8d593a8bc328ea0614f9bfb3ddf4f08}} 
+\index{weatherpanel@{weatherpanel}!get\+Weather@{get\+Weather}}
+\index{get\+Weather@{get\+Weather}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{get\+Weather()}{getWeather()}}
+{\footnotesize\ttfamily Q\+String weatherpanel\+::get\+Weather (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns a Q\+String describing the weather 
+
+\begin{DoxyReturn}{Returns}
+Q\+String weather that describes the weather 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classweatherpanel_a45e1d05896ce57be8a2485f7559c4276}\label{classweatherpanel_a45e1d05896ce57be8a2485f7559c4276}} 
+\index{weatherpanel@{weatherpanel}!get\+Weather\+ID@{get\+Weather\+ID}}
+\index{get\+Weather\+ID@{get\+Weather\+ID}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{get\+Weather\+I\+D()}{getWeatherID()}}
+{\footnotesize\ttfamily int weatherpanel\+::get\+Weather\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns an integer representing the type of weather 
+
+\begin{DoxyReturn}{Returns}
+integer weather\+ID that represents thet type of weather 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classweatherpanel_aa060e2d25c499b202688fdb0ed2e51f0}\label{classweatherpanel_aa060e2d25c499b202688fdb0ed2e51f0}} 
+\index{weatherpanel@{weatherpanel}!KtoC@{KtoC}}
+\index{KtoC@{KtoC}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{Kto\+C()}{KtoC()}}
+{\footnotesize\ttfamily Q\+String weatherpanel\+::\+KtoC (\begin{DoxyParamCaption}\item[{double}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+converts kelvin to celcius and then returns as string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em double} & temp is the temperature as a double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String holding the converted temperature 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classweatherpanel_a212139bb98a83e8c52b30bbe786b8bb1}\label{classweatherpanel_a212139bb98a83e8c52b30bbe786b8bb1}} 
+\index{weatherpanel@{weatherpanel}!pull\+Weather@{pull\+Weather}}
+\index{pull\+Weather@{pull\+Weather}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{pull\+Weather}{pullWeather}}
+{\footnotesize\ttfamily void weatherpanel\+::pull\+Weather (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+connects to openweathermaps api and queries for the weather data in J\+S\+ON format, calls data\+To\+Vars to save this info 
+
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+add query items
+
+connect up the signal right away \mbox{\Hypertarget{classweatherpanel_a3869138bae14bb7223e78541ddb45ae9}\label{classweatherpanel_a3869138bae14bb7223e78541ddb45ae9}} 
+\index{weatherpanel@{weatherpanel}!set\+Temp@{set\+Temp}}
+\index{set\+Temp@{set\+Temp}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{set\+Temp()}{setTemp()}}
+{\footnotesize\ttfamily void weatherpanel\+::set\+Temp (\begin{DoxyParamCaption}\item[{Q\+String}]{temp\+In }\end{DoxyParamCaption})}
+
+
+
+sets temperature to a Q\+String describing the temperature 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+String} & temperature that describes the temperature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classweatherpanel_aa289deea2382682a44450048c5d8dafb}\label{classweatherpanel_aa289deea2382682a44450048c5d8dafb}} 
+\index{weatherpanel@{weatherpanel}!set\+Weather@{set\+Weather}}
+\index{set\+Weather@{set\+Weather}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{set\+Weather()}{setWeather()}}
+{\footnotesize\ttfamily void weatherpanel\+::set\+Weather (\begin{DoxyParamCaption}\item[{Q\+String}]{weather\+In }\end{DoxyParamCaption})}
+
+
+
+sets weather to a Q\+String describing the weather 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+String} & weather that describes the weather \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classweatherpanel_adcfb5683fa421ee6b45b775ca3b6c5ae}\label{classweatherpanel_adcfb5683fa421ee6b45b775ca3b6c5ae}} 
+\index{weatherpanel@{weatherpanel}!set\+Weather\+ID@{set\+Weather\+ID}}
+\index{set\+Weather\+ID@{set\+Weather\+ID}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{set\+Weather\+I\+D()}{setWeatherID()}}
+{\footnotesize\ttfamily void weatherpanel\+::set\+Weather\+ID (\begin{DoxyParamCaption}\item[{int}]{to\+Set }\end{DoxyParamCaption})}
+
+
+
+sets weather\+ID to an integer representing the type of weather 
+
+
+\begin{DoxyParams}{Parameters}
+{\em integer} & weather\+ID that represents thet type of weather \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classweatherpanel_a56353d725e339accc2952eda96d65907}\label{classweatherpanel_a56353d725e339accc2952eda96d65907}} 
+\index{weatherpanel@{weatherpanel}!update\+Image@{update\+Image}}
+\index{update\+Image@{update\+Image}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{update\+Image()}{updateImage()}}
+{\footnotesize\ttfamily void weatherpanel\+::update\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Determines a background picture based on weather\+ID, sets the picture to the background. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+thunderstorm
+
+rain
+
+snow not 602,622--$>$blizzard
+
+blizzard
+
+fog
+
+tornado
+
+clear
+
+clouds
+
+default to aurora
+
+set to background \mbox{\Hypertarget{classweatherpanel_a8c4de1853c738dcf431f33a7a3ac56e4}\label{classweatherpanel_a8c4de1853c738dcf431f33a7a3ac56e4}} 
+\index{weatherpanel@{weatherpanel}!update\+Text@{update\+Text}}
+\index{update\+Text@{update\+Text}!weatherpanel@{weatherpanel}}
+\subsubsection{\texorpdfstring{update\+Text()}{updateText()}}
+{\footnotesize\ttfamily void weatherpanel\+::update\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+converts the data to a string then sets the Q\+Labels text to this string 
+
+\begin{DoxyAuthor}{Author}
+Thomas Grummett 
+\end{DoxyAuthor}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+weatherpanel.\+h\item 
+weatherpanel.\+cpp\end{DoxyCompactItemize}

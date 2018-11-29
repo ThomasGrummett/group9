@@ -2,6 +2,10 @@
 #include "ui_mainwindow.h"
 #include <QGridLayout>
 
+
+/**
+   @brief creates main UI Window
+*/
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -9,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 }
 
+/**
+   @brief deletes UI
+*/
 MainWindow::~MainWindow()
 {
     delete ui;
