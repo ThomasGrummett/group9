@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>rain.jpg</file>
+        <file>sunny.jpg</file>
+        <file>cloudy.jpg</file>
+        <file>blizzard.jpg</file>
+        <file>fog.jpg</file>
+        <file>hail.jpg</file>
+        <file>snow.jpg</file>
+        <file>thunderstorm.jpg</file>
+        <file>tornado.jpg</file>
+        <file>windy.jpg</file>
+        <file>aurora.jpg</file>
+    </qresource>
+</RCC>
