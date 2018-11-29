@@ -23,7 +23,7 @@ picturename& picturename::instance()
 
 
 /**
-   @brief Creates an instance of picturename
+   @brief Creates an instance of picturename, set aurora as default image
    @author Stacey Gunderson, Alison Lee
  */
 picturename::picturename()

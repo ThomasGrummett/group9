@@ -10,7 +10,7 @@
   @brief This class takes a given QQuickWidget and sets up a label to call an image refresh to load the picture name
   @author Stacey Gunderson, Alison Lee
   **/
-image::image(QWidget *parent)
+image::image(QQuickWidget *parent)
 {
     //Creates and sets alignment of the label image to center
     image::label = new QLabel(parent);
@@ -38,11 +38,11 @@ void image::update()
 
         //Quick fix for if the image is a png and not jpg
         QString link = "://" + name +".png";
-        QImage* thing = new QImage("Image not found");
+        QImage* thing = new QImage(link);
         if (thing->isNull())
         {
             //If neither png or jpg exits, then simply set an error message
-            label->setText(link);
+            label->setText("Image not found");
         }
         else
         {

@@ -22,7 +22,7 @@ private:
     QLabel* label;
 
 public:
-    explicit image(QWidget *parent = nullptr);
+    explicit image(QQuickWidget *parent = nullptr);
 
 public slots:
     void update();

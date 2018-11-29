@@ -4,17 +4,17 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT += core gui
+QT += widgets
+QT += network webenginewidgets
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4):
+QT += widgets
 QT += quickwidgets
-QT += webkit webkitwidgets
 
 TARGET = TestApp
 TEMPLATE = app
-LIBS+=-L"/curl/lib" -lcurl
 
-QT += network
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -32,13 +32,17 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     digitalclock.cpp \
-    weatherpanel.cpp \
+    social.cpp \
+    image.cpp \
+    picturename.cpp \
     news.cpp
 
 HEADERS += \
         mainwindow.h \
     digitalclock.h \
-    weatherpanel.h \
+    social.h \
+    image.h \
+    picturename.h \
     news.h
 
 FORMS += \
@@ -48,3 +52,9 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    social.qml
+
+RESOURCES += \
+    test_resource.qrc

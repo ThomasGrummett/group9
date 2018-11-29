@@ -1,31 +1,48 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include <QtWidgets>
+//#include <QWebEngineView>
+//#include <QtWebEngine/QtWebEngine>
 #include "digitalclock.h"
-#include <QGridLayout>
-#include "weatherpanel.h"
+#include "social.h"
+#include "image.h"
 #include "news.h"
+#include "weatherpanel.h"
 
+/**
+   @brief the main class that incorporates and displays all components of the PiDash
+   @author Meghan Hannon
+   @return Qt application exec()
+*/
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    //QtWebEngine::initialize();
     MainWindow win;
 
+    // initialize the clock to show currrent time
     DigitalClock clock(&win);
     clock.show();
-
-    weatherpanel weather(&win);
+	
+	//initialize weather panel
+	weatherpanel weather(&win);
     // Grid layout with 4 widgets for time, weather, news and social
     QGridLayout *gridLayout = new QGridLayout;
-    //QQuickWidget *qw2 = new QQuickWidget();
-    QQuickWidget *qw3 = new QQuickWidget();
-    QQuickWidget *qw4 = new QQuickWidget();
+    QQuickWidget *qw2 = new QQuickWidget();
+    QQuickWidget *socialWidget = new QQuickWidget();
+    QQuickWidget *newsWidget = new QQuickWidget();
+    QQuickWidget *imgWidget = new QQuickWidget();
 
     gridLayout->addWidget(&clock,0,0,1,1);
-    gridLayout->addWidget(&weather,0,1,1,2);
-    gridLayout->addWidget(qw3,1,0,2,3);
-    gridLayout->addWidget(qw4,0,3,3,2);
+    gridLayout->addWidget(imgWidget,0,1,1,2);
+    gridLayout->addWidget(socialWidget,1,0,2,3);
+    gridLayout->addWidget(newsWidget,0,3,3,2);
 
-    //news *newspan = new news(qw4);
+    image *img = new image(imgWidget);
+    news *newsfeed = new news(newsWidget);
+    social *soc = new social(socialWidget);
+	weatherpanel *weather = new weatherpanel(imgWidget);
+
     // adjust styling
     gridLayout->setColumnMinimumWidth(0, (win.width()/4));
     gridLayout->setRowMinimumHeight(1, ((win.height()/2)));

@@ -15,7 +15,8 @@
 void social::on_reload()
 {
     //Sets and loads the url up again
-    wv->setUrl((QUrl)"http://330hno.tumblr.com/mobile");
+    url = "https://" + urlbox->text() + ".tumblr.com/mobile";
+    wv->setUrl((QUrl)url);
 }
 
 /**
@@ -37,10 +38,15 @@ social::social(QQuickWidget *parent)
 
     //Creates a QPushButton to handle click inputs for when to refresh the page
     reloadbutton = new QPushButton(parent);
-    reloadbutton->setStyleSheet(style);
-    reloadbutton->setText("Reload blog");
-    reloadbutton->setGeometry(494,-1,162,32); //Positions the overlay to the right to block less text
+    reloadbutton->setStyleSheet(style); //Sets stylesheet to avoid white text on white background for some OS
+    reloadbutton->setText("Load blog");
+    reloadbutton->setGeometry(494,-1,165,32); //Positions the overlay to the right to block less text
     QObject::connect(reloadbutton, SIGNAL(clicked()), this, SLOT(on_reload()));
+
+    urlbox = new QLineEdit("330hno", parent);
+    urlbox->setGeometry(494,30,165,31);
+    urlbox->setStyleSheet(style);
+
     wv->show();
 }
 

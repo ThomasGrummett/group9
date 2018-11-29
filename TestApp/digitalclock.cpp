@@ -2,6 +2,11 @@
 
 #include "digitalclock.h"
 
+/**
+   @brief Digital Clock class initializer; connects timer to digital clock to always show updated time
+   @param parent the parent widget of the digital clock
+   @return void
+*/
 DigitalClock::DigitalClock(QWidget *parent)
     : QLCDNumber(parent)
 {
@@ -17,6 +22,10 @@ DigitalClock::DigitalClock(QWidget *parent)
     resize(150, 60);
 }
 
+/**
+   @brief gets the current time and displays in HH:MM format
+   @return void
+*/
 void DigitalClock::showTime()
 {
     QTime time = QTime::currentTime();
