@@ -6,6 +6,7 @@
 #include "digitalclock.h"
 #include "social.h"
 #include "image.h"
+#include "weatherpanel.h"
 
 int main(int argc, char *argv[])
 {
@@ -32,7 +33,7 @@ int main(int argc, char *argv[])
 
     image *img = new image(imgWidget);
     social *soc = new social(socialWidget);
-
+ 	weatherpanel *weather = new weatherpanel(imgWidget);
 
     // adjust styling
     gridLayout->setColumnMinimumWidth(0, (win.width()/4));
