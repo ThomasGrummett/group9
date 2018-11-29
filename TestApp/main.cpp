@@ -6,20 +6,13 @@
 #include "digitalclock.h"
 #include "social.h"
 #include "image.h"
-#include "news.h"
 
-/**
-   @brief the main class that incorporates and displays all components of the PiDash
-   @author Meghan Hannon
-   @return Qt application exec()
-*/
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     //QtWebEngine::initialize();
     MainWindow win;
 
-    // initialize the clock to show currrent time
     DigitalClock clock(&win);
     clock.show();
 
@@ -27,16 +20,17 @@ int main(int argc, char *argv[])
     QGridLayout *gridLayout = new QGridLayout;
     QQuickWidget *qw2 = new QQuickWidget();
     QQuickWidget *socialWidget = new QQuickWidget();
-    QQuickWidget *newsWidget = new QQuickWidget();
+    QQuickWidget *qw4 = new QQuickWidget();
     QQuickWidget *imgWidget = new QQuickWidget();
 
     gridLayout->addWidget(&clock,0,0,1,1);
     gridLayout->addWidget(imgWidget,0,1,1,2);
     gridLayout->addWidget(socialWidget,1,0,2,3);
-    gridLayout->addWidget(newsWidget,0,3,3,2);
+    gridLayout->addWidget(qw4,0,3,3,2);
+    //TODO: Add image widget to gridlayout without breaking pre-existing grid?
+    //gridLayout->addWidget(imgWidget,?,?,?,?);
 
     image *img = new image(imgWidget);
-    news *newsfeed = new news(newsWidget);
     social *soc = new social(socialWidget);
 
 
