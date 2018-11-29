@@ -9,25 +9,25 @@
 
 /**
  * @brief Constructor takes a QQuickWidget and adds the weather display to it
- * @param QQuickWidget parent to display the weather in
+ * @param  parent QQuickWidget to display the weather in
  * @author Thomas Grummett
  */
 weatherpanel::weatherpanel(QQuickWidget *parent)
     :QLabel(parent)
 {
-    QString style="background-color: #A3C1DA; color: white;";
-    this->setStyleSheet(style);
-    setGeometry(0,00,400,110);
+    QString style="background-color: #2884C2; color: white;";
+   this->setStyleSheet(style);
+    setGeometry(80,80,200,150);
     appID="a814b2b3fb9f749e9aa297b1f0300a84";
-    /// make sure we have an active network session
+    // make sure we have an active network session
     this->nam = new QNetworkAccessManager(this);
-    ///set london as default
+    //set london as default
     city="London,CA";
     QNetworkConfigurationManager ncm;
     this->ns = new QNetworkSession(ncm.defaultConfiguration(), this);
-    /// tell the system we want network
+    // tell the system we want network
     this->ns->open();
-    ///connect timer in order to pull the weather every 5 mins
+    //connect timer in order to pull the weather every 5 mins
     QTimer *timer = new QTimer(this);
         connect(timer, &QTimer::timeout, this, &weatherpanel::pullWeather);
         timer->start(1000*60*5);
@@ -35,7 +35,7 @@ weatherpanel::weatherpanel(QQuickWidget *parent)
 }
 /**
  * @brief returns an integer representing the type of weather
- * @return integer weatherID that represents thet type of weather
+ * @return weatherID integer that represents thet type of weather
  * @author Thomas Grummett
  */
 int weatherpanel::getWeatherID(){
@@ -43,7 +43,7 @@ int weatherpanel::getWeatherID(){
 }
 /**
  * @brief sets weatherID to an integer representing the type of weather
- * @param integer weatherID that represents thet type of weather
+ * @param weatherID integer that represents thet type of weather
  * @author Thomas Grummett
  */
 void weatherpanel::setWeatherID(int toSet){
@@ -60,7 +60,7 @@ QString weatherpanel::getWeather(){
 }
 /**
  * @brief returns a QString describing the temperature
- * @return QString temperature that describes the temperature
+ * @return temperature QString that describes the temperature
  * @author Thomas Grummett
  */
 QString weatherpanel::getTemp(){
@@ -68,7 +68,7 @@ QString weatherpanel::getTemp(){
 }
 /**
  * @brief returns a QString holding the openweathermaps api key
- * @return QString appID that holds the api key
+ * @return appID QString that holds the api key
  * @author Thomas Grummett
  */
 QString weatherpanel::getID(){
@@ -76,7 +76,7 @@ QString weatherpanel::getID(){
 }
 /**
  * @brief sets weather to a QString describing the weather
- * @param QString weather that describes the weather
+ * @param weatherIn QString that describes the weather
  * @author Thomas Grummett
  */
 void weatherpanel::setWeather(QString weatherIn){
@@ -84,7 +84,7 @@ void weatherpanel::setWeather(QString weatherIn){
 }
 /**
  * @brief sets temperature to a QString describing the temperature
- * @param QString temperature that describes the temperature
+ * @param temperature QString that describes the temperature
  * @author Thomas Grummett
  */
 void weatherpanel::setTemp(QString tempIn){
@@ -99,20 +99,20 @@ void weatherpanel::pullWeather(){
     QUrl url("http://api.openweathermap.org/data/2.5/weather");
     QUrlQuery query;
 
-     ///add query items
+     //add query items
     query.addQueryItem("q", city);
     query.addQueryItem("mode", "json");
     query.addQueryItem("APPID", getID());
     url.setQuery(query);
 
      QNetworkReply *netreply = nam->get(QNetworkRequest(url));
-     /// connect up the signal right away
+     // connect up the signal right away
      connect(netreply, &QNetworkReply::finished,
                 this, [this, netreply]() { dataToVars(netreply); });
 }
 /**
  * @brief converts kelvin to celcius and then returns as string
- * @param double temp is the temperature as a double
+ * @param temp double is the temperature as a double
  * @return QString holding the converted temperature
  *@author Thomas Grummett
 */
@@ -129,7 +129,7 @@ void weatherpanel::updateText(){
 }
 /**
  * @brief converts the raw data to useful variables
- * @param netreply is the reply for a query to openweathermaps api
+ * @param netreply  QNetworkReply the data pulled for a query to openweathermaps api
  * @author Thomas Grummett
  */
 void weatherpanel::dataToVars(QNetworkReply *netreply){
@@ -148,7 +148,7 @@ void weatherpanel::dataToVars(QNetworkReply *netreply){
                 setWeather(tempObject.value(QStringLiteral("description")).toString());
                 setWeatherID(tempObject.value(QStringLiteral("id")).toInt());
              }
-            ///pull temperature
+            //pull temperature
             if (jsobj.contains(QStringLiteral("main"))) {
                 jsval = jsobj.value(QStringLiteral("main"));
                 tempObject = jsval.toObject();
@@ -156,7 +156,7 @@ void weatherpanel::dataToVars(QNetworkReply *netreply){
                 setTemp(KtoC(jsval.toDouble()));
              }
         }
-        ///update QLabel
+        //update QLabel
         updateImage();
         updateText();
     }
@@ -167,43 +167,43 @@ void weatherpanel::dataToVars(QNetworkReply *netreply){
  * @author Thomas Grummett
  */
 void weatherpanel::updateImage(){
-    ///thunderstorm
+    //thunderstorm
     if(getWeatherID()>=200 && getWeatherID()<300){
         wToImage="thunderstorm";
     }
-    ///rain
+    //rain
     else if(getWeatherID()>=300 && getWeatherID()<600){
         wToImage="rain";
     }
-    ///snow not 602,622-->blizzard
+    //snow not 602,622-->blizzard
     else if(getWeatherID()>=600 && getWeatherID()<700 &&getWeatherID()!=602 &&getWeatherID()!=622){
         wToImage="snow";
     }
-    ///blizzard
+    //blizzard
     else if(getWeatherID()==602 || getWeatherID()==622){
         wToImage="blizzard";
     }
-    ///fog
+    //fog
     else if(getWeatherID()>=700 && getWeatherID()<=770){
         wToImage="fog";
     }
-    ///tornado
+    //tornado
     else if(getWeatherID()>=770 && getWeatherID()<800){
         wToImage="tornado";
     }
-    ///clear
+    //clear
     else if(getWeatherID()==800){
         wToImage="sunny";
     }
-    ///clouds
+    //clouds
     else if(getWeatherID()>800){
         wToImage="cloudy";
     }
-    ///default to aurora
+    //default to aurora
     else{
         wToImage="aurora";
     }
-    ///set to background
+    //set to background
     picturename::instance();
     picturename::instance().set_picture(wToImage);
 }
